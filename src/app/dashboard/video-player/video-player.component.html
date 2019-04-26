@@ -1,6 +1,10 @@
-<div class="card">
+<div class="card"  *ngIf="(video | async) as v; else noVideo">
   <div class="card-content">
-    <h3>{{ (video | async)?.title }}</h3>
-    <p>{{ video?.author }}</p>
+    <h3>{{ v?.title }}</h3>
+    <p>{{ v?.author }}</p>
   </div>
 </div>
+
+<ng-template #noVideo>
+ <h3>No Video Selected!</h3>
+</ng-template>

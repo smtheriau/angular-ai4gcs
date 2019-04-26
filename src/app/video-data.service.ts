@@ -19,4 +19,8 @@ export class VideoDataService {
           );
   }
 
+  loadVideo(id: string): Observable<Video> {
+    return this.http.get<Video>('https://api.angularbootcamp.com/videos/'+ id);
+  }
+
 }
